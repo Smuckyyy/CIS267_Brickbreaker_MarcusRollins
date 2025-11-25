@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2204021847760683340}
   - component: {fileID: 1438720937970943858}
   - component: {fileID: -1473582174962197959}
-  - component: {fileID: -5231752038522682546}
+  - component: {fileID: 3947178563776497704}
+  - component: {fileID: 2845995106948471119}
   m_Layer: 0
   m_Name: PinkBrick
   m_TagString: Untagged
@@ -166,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.95, y: 2.21}
   m_EdgeRadius: 0
---- !u!114 &-5231752038522682546
+--- !u!114 &3947178563776497704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +176,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3806292355913937198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179c99b21a215bb4e9135f267c0eadbb, type: 3}
+  m_Script: {fileID: 11500000, guid: ed545aa95cda21743a408c45a74f7484, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerBrick
-  powerUpPrefab: {fileID: 1924544235698406844, guid: 3f3fd8e4b6cdbbb4582508e6ba454ce5, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpSpawner
+  dropChance: 0.2
+  powerUpPrefabs:
+  - {fileID: 1432774042795075896, guid: 921cf82a15f164e4db7f62417d09d73f, type: 3}
+  - {fileID: 1924544235698406844, guid: 3f3fd8e4b6cdbbb4582508e6ba454ce5, type: 3}
+  - {fileID: 6083950609480166165, guid: 32e7d5b96618fd84fb0bb368d4059a49, type: 3}
+--- !u!114 &2845995106948471119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806292355913937198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50e0337d247afe49bd27d7bff437bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TwoHitBrick

@@ -12,41 +12,57 @@ public class BrickSpawner : MonoBehaviour
 
     [Header("Spawn Chance")]
     [Range(0f, 1f)]
-    public float spawnChance = 1f;
+    public float spawnChance = 1f; //Change this field to change how many bricks spawn
+
+    private int chosenLevel = 0;
 
     void Start()
     {
+        //Choose level1 or level2
+        chosenLevel = Random.Range(0, 2);
         SpawnBricks();
     }
 
     void SpawnBricks()
     {
-        if (brickPrefabs.Length == 0) return;
+        if (brickPrefabs == null || brickPrefabs.Length == 0) return;
 
-        //Get width & height from first prefabs
+        //Get brick size for spacing
         SpriteRenderer sr = brickPrefabs[0].GetComponent<SpriteRenderer>();
         float brickWidth = sr.bounds.size.x;
         float brickHeight = sr.bounds.size.y;
 
-        //This spacing adds a gap between bricks
-        float spacingX = brickWidth + 0.2f;
+        //This puts a small gap between bricks
+        float spacingX = brickWidth + 0.2f; 
         float spacingY = brickHeight + 0.2f;
 
-        //This loop spawns the bricks in the grid using the hierarchy of the rows and columns
         for (int r = 0; r < rows; r++)
         {
             for (int c = 0; c < columns; c++)
             {
-                if (Random.value > spawnChance) continue;
+                if (chosenLevel == 1)
+                {
+                    //Level 2 will be staggered bricks
+                    if ((r + c) % 2 == 0)
+                    {
+                        continue;
+                    }
+                }
 
-                //idx stores a random number using the range of the array
+                //Random brick spawns
+                if (Random.value > spawnChance) 
+                    continue;
+
+                //Pick a random brick prefab
                 int idx = Random.Range(0, brickPrefabs.Length);
-                //selectedBrick spawns the actual brick
-                GameObject selectedBrick = brickPrefabs[idx];
+                GameObject chosen = brickPrefabs[idx];
 
-                Vector2 pos = new Vector2(startPos.x + c * spacingX, startPos.y - r * spacingY);
+                Vector2 pos = new Vector2(
+                    startPos.x + (c * spacingX),
+                    startPos.y - (r * spacingY)
+                );
 
-                Instantiate(selectedBrick, pos, Quaternion.identity, this.transform);
+                Instantiate(chosen, pos, Quaternion.identity, this.transform);
             }
         }
     }

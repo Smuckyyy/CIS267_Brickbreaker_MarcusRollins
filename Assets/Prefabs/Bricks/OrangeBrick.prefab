@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3540266097601889395}
   - component: {fileID: -8459858989743048091}
   - component: {fileID: -2574808028942458049}
-  - component: {fileID: -8513938302616778960}
+  - component: {fileID: 4832589269018940658}
+  - component: {fileID: 2557284490645883030}
   m_Layer: 0
   m_Name: OrangeBrick
   m_TagString: Untagged
@@ -166,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.98, y: 2.22}
   m_EdgeRadius: 0
---- !u!114 &-8513938302616778960
+--- !u!114 &4832589269018940658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +176,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777249681144193300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179c99b21a215bb4e9135f267c0eadbb, type: 3}
+  m_Script: {fileID: 11500000, guid: ed545aa95cda21743a408c45a74f7484, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerBrick
-  powerUpPrefab: {fileID: 1432774042795075896, guid: 921cf82a15f164e4db7f62417d09d73f, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpSpawner
+  dropChance: 0.2
+  powerUpPrefabs:
+  - {fileID: 1432774042795075896, guid: 921cf82a15f164e4db7f62417d09d73f, type: 3}
+  - {fileID: 1924544235698406844, guid: 3f3fd8e4b6cdbbb4582508e6ba454ce5, type: 3}
+  - {fileID: 6083950609480166165, guid: 32e7d5b96618fd84fb0bb368d4059a49, type: 3}
+--- !u!114 &2557284490645883030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777249681144193300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508a79090f2911c48ac0a92be5f7e6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalBrick

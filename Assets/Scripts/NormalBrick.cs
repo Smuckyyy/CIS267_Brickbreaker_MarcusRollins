@@ -15,6 +15,7 @@ public class NormalBrick : MonoBehaviour
         //If the ball came into contact with the brick then destroy
         if(hitCount >= 1)
         {
+            GetComponent<PowerUpSpawner>()?.DropPowerUp();
             Destroy(this.gameObject);
         }
     }

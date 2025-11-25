@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7835562561516333138}
   - component: {fileID: -5319926084788570704}
   - component: {fileID: 5076963087428795350}
-  - component: {fileID: -8038496497552722259}
+  - component: {fileID: 1394798165197200656}
+  - component: {fileID: -7625375467398649793}
   m_Layer: 0
   m_Name: GreenBrick
   m_TagString: Untagged
@@ -166,7 +167,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.97, y: 2.2}
   m_EdgeRadius: 0
---- !u!114 &-8038496497552722259
+--- !u!114 &1394798165197200656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276743606521739088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed545aa95cda21743a408c45a74f7484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpSpawner
+  dropChance: 0.2
+  powerUpPrefabs:
+  - {fileID: 6083950609480166165, guid: 32e7d5b96618fd84fb0bb368d4059a49, type: 3}
+  - {fileID: 1924544235698406844, guid: 3f3fd8e4b6cdbbb4582508e6ba454ce5, type: 3}
+  - {fileID: 1432774042795075896, guid: 921cf82a15f164e4db7f62417d09d73f, type: 3}
+--- !u!114 &-7625375467398649793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

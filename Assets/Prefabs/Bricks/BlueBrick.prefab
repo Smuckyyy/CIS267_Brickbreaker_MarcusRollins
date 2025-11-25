@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4607143026993205841}
   - component: {fileID: 3784654978287151984}
   - component: {fileID: -7132744533539066867}
+  - component: {fileID: 3307039570357976900}
   m_Layer: 0
   m_Name: BlueBrick
   m_TagString: Untagged
@@ -178,3 +179,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50e0337d247afe49bd27d7bff437bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TwoHitBrick
+--- !u!114 &3307039570357976900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515068946574725639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed545aa95cda21743a408c45a74f7484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpSpawner
+  dropChance: 0.2
+  powerUpPrefabs:
+  - {fileID: 6083950609480166165, guid: 32e7d5b96618fd84fb0bb368d4059a49, type: 3}
+  - {fileID: 1432774042795075896, guid: 921cf82a15f164e4db7f62417d09d73f, type: 3}
+  - {fileID: 1924544235698406844, guid: 3f3fd8e4b6cdbbb4582508e6ba454ce5, type: 3}

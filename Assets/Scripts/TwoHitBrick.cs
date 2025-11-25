@@ -23,6 +23,7 @@ public class TwoHitBrick : MonoBehaviour
         //Make the hit count higher because these bricks will take two hits
         if(hitCount >= 2)
         {
+            GetComponent<PowerUpSpawner>()?.DropPowerUp();
             Destroy(this.gameObject);
         }
     }
