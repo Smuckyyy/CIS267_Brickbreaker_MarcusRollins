@@ -178,4 +178,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4446dde35b006f44ea25f8bae4d8952e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleController
-  moveSpeed: 40
+  moveSpeed: 25

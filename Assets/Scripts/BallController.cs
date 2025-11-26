@@ -63,17 +63,30 @@ public class BallController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Paddle"))
     {
-        //Calculate hit point
-        float hitPoint = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;
+        if (collision.gameObject.CompareTag("Paddle"))
+        {
+            //Calculate hit point
+            float hitPoint = (transform.position.x - collision.transform.position.x) / collision.collider.bounds.size.x;
 
-        //Create new direction based on hit point
-        Vector2 dir = new Vector2(hitPoint, 1).normalized;
+            //Create new direction based on hit point
+            Vector2 dir = new Vector2(hitPoint, 1).normalized;
 
-        //Set the velocity back to the ball
-        rb.linearVelocity = dir * launchSpeed;
+            //Set the velocity back to the ball
+            rb.linearVelocity = dir * launchSpeed;
+        }
     }
-}
+
+     public void ResetBall()
+    {
+        //Stop movement
+        rb.linearVelocity = Vector2.zero;
+
+        //Disable physics so it snaps to paddle again
+        rb.simulated = false;
+
+        //Mark as not launched so Update() sticks it to the paddle
+        isLaunched = false;
+    }
+
 }

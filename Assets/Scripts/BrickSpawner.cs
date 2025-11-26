@@ -14,8 +14,9 @@ public class BrickSpawner : MonoBehaviour
     [Range(0f, 1f)]
     public float spawnChance = 1f; //Change this field to change how many bricks spawn
 
+    public static int remainingBricks = 0;
     private int chosenLevel = 0;
-
+    
     void Start()
     {
         //Choose level1 or level2
@@ -25,6 +26,10 @@ public class BrickSpawner : MonoBehaviour
 
     void SpawnBricks()
     {
+
+       //Reset bricks left
+        remainingBricks = 0;
+
         if (brickPrefabs == null || brickPrefabs.Length == 0) return;
 
         //Get brick size for spacing
@@ -57,12 +62,11 @@ public class BrickSpawner : MonoBehaviour
                 int idx = Random.Range(0, brickPrefabs.Length);
                 GameObject chosen = brickPrefabs[idx];
 
-                Vector2 pos = new Vector2(
-                    startPos.x + (c * spacingX),
-                    startPos.y - (r * spacingY)
-                );
+                Vector2 pos = new Vector2(startPos.x + (c * spacingX), startPos.y - (r * spacingY));
 
                 Instantiate(chosen, pos, Quaternion.identity, this.transform);
+
+                remainingBricks++;
             }
         }
     }

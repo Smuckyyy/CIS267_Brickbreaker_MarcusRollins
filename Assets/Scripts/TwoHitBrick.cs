@@ -24,7 +24,19 @@ public class TwoHitBrick : MonoBehaviour
         if(hitCount >= 2)
         {
             GetComponent<PowerUpSpawner>()?.DropPowerUp();
+            
+            GameManager.Instance.AddScore(200);
+            
+            BrickSpawner.remainingBricks--;
+
+            if(BrickSpawner.remainingBricks <= 0)
+            {
+                GameManager.Instance.GameWon();
+            }
+            
             Destroy(this.gameObject);
         }
+
+        
     }
 }

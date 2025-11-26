@@ -12,10 +12,20 @@ public class NormalBrick : MonoBehaviour
 
         hitCount++;
 
-        //If the ball came into contact with the brick then destroy
+        //All blocks have the chance to spawn a powerup, then if the ball came into contact with the brick then destroy
         if(hitCount >= 1)
         {
             GetComponent<PowerUpSpawner>()?.DropPowerUp();
+            
+            GameManager.Instance.AddScore(100);
+
+            BrickSpawner.remainingBricks--;
+
+            if(BrickSpawner.remainingBricks <= 0)
+            {
+                GameManager.Instance.GameWon();
+            }
+
             Destroy(this.gameObject);
         }
     }
