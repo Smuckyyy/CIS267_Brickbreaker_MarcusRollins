@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        #if UNITY_WEBGL
+        Screen.orientation = ScreenOrientation.Portrait;
+        #endif
             
     }
 
